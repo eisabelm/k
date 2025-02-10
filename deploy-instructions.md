@@ -1,4 +1,12 @@
-npm run build
+# Update package list
+sudo apt update
+
+# Install Node.js and npm
+sudo apt install nodejs npm -y
+
+# Verify installation
+node --version
+npm --version
 ```
 
 ## 2. Create Directory Structure on Raspberry Pi
