@@ -1,0 +1,223 @@
+Forcing web requests to allow TLS v1.2 (Required for requests to Chocolatey.org)
+Getting latest version of the Chocolatey package for download.
+Not using proxy.                                                                                                        Getting Chocolatey from https://community.chocolatey.org/api/v2/package/chocolatey/2.4.2.                               Downloading https://community.chocolatey.org/api/v2/package/chocolatey/2.4.2 to C:\Users\lebas\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip                                                                                        Not using proxy.                                                                                                        Extracting C:\Users\lebas\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip to C:\Users\lebas\AppData\Local\Temp\chocolatey\chocoInstall
+Installing Chocolatey on the local machine
+Creating ChocolateyInstall as an environment variable (targeting 'Machine')
+  Setting ChocolateyInstall to 'C:\ProgramData\chocolatey'
+WARNING: It's very likely you will need to close and reopen your shell
+  before you can use choco.
+Restricting write permissions to Administrators
+We are setting up the Chocolatey package repository.
+The packages themselves go to 'C:\ProgramData\chocolatey\lib'
+  (i.e. C:\ProgramData\chocolatey\lib\yourPackageName).
+A shim file for the command line goes to 'C:\ProgramData\chocolatey\bin'
+  and points to an executable in 'C:\ProgramData\chocolatey\lib\yourPackageName'.
+
+Creating Chocolatey CLI folders if they do not already exist.
+
+chocolatey.nupkg file not installed in lib.
+ Attempting to locate it from bootstrapper.
+PATH environment variable does not have C:\ProgramData\chocolatey\bin in it. Adding...
+WARNING: Not setting tab completion: Profile file does not exist at
+'C:\Users\lebas\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'.
+Chocolatey CLI (choco.exe) is now ready.
+You can call choco from anywhere, command line or powershell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart powershell and/or consoles
+ first prior to using choco.
+Ensuring Chocolatey commands are on the path
+Ensuring chocolatey.nupkg is in the lib folder
+Chocolatey v2.4.2
+Upgrading the following packages:
+python;visualstudio2019-workload-vctools
+By upgrading, you accept licenses for the packages.
+python is not installed. Installing...
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading chocolatey-compatibility.extension 1.0.0... 100%
+
+chocolatey-compatibility.extension v1.0.0 [Approved]
+chocolatey-compatibility.extension package files upgrade completed. Performing other installation steps.
+ Installed/updated chocolatey-compatibility extensions.
+ The upgrade of chocolatey-compatibility.extension was successful.
+  Deployed to 'C:\ProgramData\chocolatey\extensions\chocolatey-compatibility'
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading chocolatey-core.extension 1.4.0... 100%
+
+chocolatey-core.extension v1.4.0 [Approved]
+chocolatey-core.extension package files upgrade completed. Performing other installation steps.
+ Installed/updated chocolatey-core extensions.
+ The upgrade of chocolatey-core.extension was successful.
+  Deployed to 'C:\ProgramData\chocolatey\extensions\chocolatey-core'
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading chocolatey-windowsupdate.extension 1.0.5... 100%
+
+chocolatey-windowsupdate.extension v1.0.5 [Approved]
+chocolatey-windowsupdate.extension package files upgrade completed. Performing other installation steps.
+ Installed/updated chocolatey-windowsupdate extensions.
+ The upgrade of chocolatey-windowsupdate.extension was successful.
+  Deployed to 'C:\ProgramData\chocolatey\extensions\chocolatey-windowsupdate'
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading KB2919442 1.0.20160915... 100%
+
+KB2919442 v1.0.20160915 [Approved]
+KB2919442 package files upgrade completed. Performing other installation steps.
+Skipping installation because this hotfix only applies to Windows 8.1 and Windows Server 2012 R2.
+ The upgrade of KB2919442 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading KB2919355 1.0.20160915... 100%
+
+KB2919355 v1.0.20160915 [Approved]
+KB2919355 package files upgrade completed. Performing other installation steps.
+Skipping installation because this hotfix only applies to Windows 8.1 and Windows Server 2012 R2.
+ The upgrade of KB2919355 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading KB2999226 1.0.20181019... 100%
+
+KB2999226 v1.0.20181019 [Approved]
+KB2999226 package files upgrade completed. Performing other installation steps.
+Skipping installation because update KB2999226 does not apply to this operating system (Microsoft Windows 11 Home).
+ The upgrade of KB2999226 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading KB3035131 1.0.3... 100%
+
+KB3035131 v1.0.3 [Approved]
+KB3035131 package files upgrade completed. Performing other installation steps.
+Skipping installation because update KB3035131 does not apply to this operating system (Microsoft Windows 11 Home).
+ The upgrade of KB3035131 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading KB3033929 1.0.5... 100%
+
+KB3033929 v1.0.5 [Approved]
+KB3033929 package files upgrade completed. Performing other installation steps.
+Skipping installation because update KB3033929 does not apply to this operating system (Microsoft Windows 11 Home).
+ The upgrade of KB3033929 was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading vcredist140 14.42.34433... 100%
+
+vcredist140 v14.42.34433 [Approved]
+vcredist140 package files upgrade completed. Performing other installation steps.
+Downloading vcredist140-x86
+  from 'https://download.visualstudio.microsoft.com/download/pr/5319f718-2a84-4aff-86be-8dbdefd92ca1/DD1A8BE03398367745A87A5E35BEBDAB00FDAD080CF42AF0C3F20802D08C25D4/VC_redist.x86.exe'
+Progress: 100% - Completed download of C:\Users\lebas\AppData\Local\Temp\chocolatey\vcredist140\14.42.34433\VC_redist.x86.exe (13.31 MB).
+Download of VC_redist.x86.exe (13.31 MB) completed.
+Hashes match.
+Installing vcredist140-x86...
+ERROR: Running ["C:\Users\lebas\AppData\Local\Temp\chocolatey\vcredist140\14.42.34433\VC_redist.x86.exe" /quiet /norestart] was not successful. Exit code was '112'. See log for possible error messages.
+The upgrade of vcredist140 was NOT successful.
+Error while running 'C:\ProgramData\chocolatey\lib\vcredist140\tools\chocolateyInstall.ps1'.
+ See log for details.
+Failed to install vcredist2015 because a previous dependency failed.
+Failed to install python313 because a previous dependency failed.
+Failed to install python3 because a previous dependency failed.
+Failed to install python because a previous dependency failed.
+visualstudio2019-workload-vctools is not installed. Installing...
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading chocolatey-dotnetfx.extension 1.0.1... 100%
+
+chocolatey-dotnetfx.extension v1.0.1
+chocolatey-dotnetfx.extension package files upgrade completed. Performing other installation steps.
+ Installed/updated chocolatey-dotnetfx extensions.
+ The upgrade of chocolatey-dotnetfx.extension was successful.
+  Deployed to 'C:\ProgramData\chocolatey\extensions\chocolatey-dotnetfx'
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading chocolatey-visualstudio.extension 1.11.1... 100%
+
+chocolatey-visualstudio.extension v1.11.1
+chocolatey-visualstudio.extension package files upgrade completed. Performing other installation steps.
+ Installed/updated chocolatey-visualstudio extensions.
+ The upgrade of chocolatey-visualstudio.extension was successful.
+  Deployed to 'C:\ProgramData\chocolatey\extensions\chocolatey-visualstudio'
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading dotnetfx 4.8.0.20220524... 100%
+
+dotnetfx v4.8.0.20220524 [Approved]
+dotnetfx package files upgrade completed. Performing other installation steps.
+Microsoft .NET Framework 4.8 or later is already installed.
+ The upgrade of dotnetfx was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading vcredist140 14.42.34433... 100%
+
+vcredist140 v14.42.34433 [Approved]
+vcredist140 package files upgrade completed. Performing other installation steps.
+File appears to be downloaded already. Verifying with package checksum to determine if it needs to be redownloaded.
+Hashes match.
+Hashes match.
+Installing vcredist140-x86...
+ERROR: Running ["C:\Users\lebas\AppData\Local\Temp\chocolatey\vcredist140\14.42.34433\VC_redist.x86.exe" /quiet /norestart] was not successful. Exit code was '-2147024784'. See log for possible error messages.
+The upgrade of vcredist140 was NOT successful.
+Error while running 'C:\ProgramData\chocolatey\lib\vcredist140\tools\chocolateyInstall.ps1'.
+ See log for details.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading visualstudio-installer 2.0.3... 100%
+
+visualstudio-installer v2.0.3 [Approved]
+visualstudio-installer package files upgrade completed. Performing other installation steps.
+ The upgrade of visualstudio-installer was successful.
+  Software install location not explicitly set, it could be in package or
+  default install location of installer.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading visualstudio2019buildtools 16.11.42... 100%
+
+visualstudio2019buildtools v16.11.42 [Approved]
+visualstudio2019buildtools package files upgrade completed. Performing other installation steps.
+Downloading channel manifest
+  from 'https://aka.ms/vs/16/release/channel'
+Progress: 100% - Completed download of C:\Users\lebas\AppData\Local\Temp\chocolatey\chocolatey-visualstudio.extension\ChannelManifest_-602808024.man (131.58 KB).
+Download of ChannelManifest_-602808024.man (131.58 KB) completed.
+Downloading catalog manifest
+  from 'https://download.visualstudio.microsoft.com/download/pr/774d4bbf-060d-41e5-8562-3938927a2449/a2ffb0326699607434623f50052b7fb186b65d92b90af9189e57c38e2677d444/VisualStudio.vsman'
+Progress: 100% - Completed download of C:\Users\lebas\AppData\Local\Temp\chocolatey\chocolatey-visualstudio.extension\Catalog_-894716961.man (11.26 MB).
+Download of Catalog_-894716961.man (11.26 MB) completed.
+Downloading channel manifest
+  from 'https://aka.ms/vs/17/release/channel'
+Progress: 100% - Completed download of C:\Users\lebas\AppData\Local\Temp\chocolatey\chocolatey-visualstudio.extension\ChannelManifest_574806083.man (103.23 KB).
+Download of ChannelManifest_574806083.man (103.23 KB) completed.
+Downloading catalog manifest
+  from 'https://download.visualstudio.microsoft.com/download/pr/9e5046bb-ab15-4a45-9546-cbabed333482/61fdd086e90e2fdfb0def3eb0894dd108341a6fd5cd8e870be262efeb179ea13/VisualStudio.vsman'
+Progress: 82% - Saving 13.23 MB of 16.03 MB                                                                            ERROR: The remote file either doesn't exist, is unauthorized, or is forbidden for url 'https://download.visualstudio.microsoft.com/download/pr/9e5046bb-ab15-4a45-9546-cbabed333482/61fdd086e90e2fdfb0def3eb0894dd108341a6fd5cd8e870be262efeb179ea13/VisualStudio.vsman'. Exception calling "Write" with "3" argument(s): "There is not enough space on the disk.
+"
+The upgrade of visualstudio2019buildtools was NOT successful.
+Error while running 'C:\ProgramData\chocolatey\lib\visualstudio2019buildtools\tools\ChocolateyInstall.ps1'.
+ See log for details.
+Failed to install visualstudio2019-workload-vctools because a previous dependency failed.
+
+Chocolatey upgraded 12/19 packages. 7 packages failed.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Upgraded:
+ - chocolatey-compatibility.extension v1.0.0
+ - chocolatey-core.extension v1.4.0
+ - chocolatey-dotnetfx.extension v1.0.1
+ - chocolatey-visualstudio.extension v1.11.1
+ - chocolatey-windowsupdate.extension v1.0.5
+ - dotnetfx v4.8.0.20220524
+ - KB2919355 v1.0.20160915
+ - KB2919442 v1.0.20160915
+ - KB2999226 v1.0.20181019
+ - KB3033929 v1.0.5
+ - KB3035131 v1.0.3
+ - visualstudio-installer v2.0.3
+
+Failures
+ - python - Failed to install python because a previous dependency failed.
+ - python3 - Failed to install python3 because a previous dependency failed.
+ - python313 - Failed to install python313 because a previous dependency failed.
+ - vcredist140 (exited 112) - Error while running 'C:\ProgramData\chocolatey\lib\vcredist140\tools\chocolateyInstall.ps1'.
+ See log for details.
+ - vcredist2015 - Failed to install vcredist2015 because a previous dependency failed.
+ - visualstudio2019buildtools (exited 404) - Error while running 'C:\ProgramData\chocolatey\lib\visualstudio2019buildtools\tools\ChocolateyInstall.ps1'.
+ See log for details.
+ - visualstudio2019-workload-vctools - Failed to install visualstudio2019-workload-vctools because a previous dependency failed.
+Type ENTER to exit:
