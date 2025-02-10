@@ -1,11 +1,26 @@
+Set-ExecutionPolicy Bypass -Scope Process -Force
+```
+
+2. Install Node.js:
+- Go to https://nodejs.org/en/download
+- Download Windows Installer (.msi) for LTS version
+- Run the installer, accepting all defaults
+- Check "Automatically install the necessary tools"
+- Complete the installation
+- Restart your computer
+
+3. After restart, verify installation:
+- Open PowerShell (not as Administrator)
+- Run these commands:
+```powershell
 node --version
 npm --version
 ```
 
-## 2. Build the Application (On Windows)
+## 2. Build Application
 ```powershell
-# Navigate to your project directory (where package.json is located)
-cd path\to\your\project
+# Navigate to your project directory
+cd C:\path\to\your\project
 
 # Install dependencies
 npm install
@@ -15,7 +30,6 @@ npm run build
 ```
 
 ## 3. Deploy to Raspberry Pi
-After the build is complete, open PowerShell and copy files to Raspberry Pi:
 ```powershell
 # Replace raspberrypi with your Pi's IP address if needed
 scp -r dist/* kali@raspberrypi:/var/www/html/videos/
@@ -36,30 +50,6 @@ cd /var/www/html/videos
 npm install --production
 
 # Configure Apache
-sudo nano /etc/apache2/sites-available/videos.conf
-```
-
-Add this Apache configuration:
-```apache
-<VirtualHost *:80>
-    ServerName raspberrypi
-    DocumentRoot /var/www/html/videos
-
-    ProxyPreserveHost On
-    ProxyPass /api http://localhost:5000/api
-    ProxyPassReverse /api http://localhost:5000/api
-
-    <Directory /var/www/html/videos>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
-</VirtualHost>
-```
-
-Enable Apache configuration:
-```bash
-sudo a2ensite videos.conf
 sudo a2enmod proxy
 sudo a2enmod proxy_http
 sudo systemctl restart apache2
@@ -73,7 +63,6 @@ pm2 startup
 ```
 
 ## 5. Set Up Video Directory
-Create a directory for your video files:
 ```bash
 # Run these commands on your Raspberry Pi
 sudo mkdir -p /var/www/html/videos/content
