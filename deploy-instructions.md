@@ -1,31 +1,40 @@
-# Deployment Instructions for Raspberry Pi Apache2 Server
-
-## 1. Build the Application
-On your development machine, run:
-```bash
 npm run build
 ```
-This will create a production build in the `dist` folder.
 
-## 2. Copy Files to Raspberry Pi
-Copy the following files/folders to your Raspberry Pi:
-- `dist/` directory → `/var/www/html/videos/`
-- `server/` directory → `/var/www/html/videos/server/`
-- `shared/` directory → `/var/www/html/videos/shared/`
-- `package.json` and `package-lock.json` → `/var/www/html/videos/`
-
-## 3. Install Dependencies on Raspberry Pi
-In the `/var/www/html/videos` directory, run:
+## 2. Create Directory Structure on Raspberry Pi
+SSH into your Raspberry Pi and create the necessary directories:
 ```bash
+sudo mkdir -p /var/www/html/videos
+sudo chown -R kali:kali /var/www/html/videos
+```
+
+## 3. Copy Files to Raspberry Pi
+From your development machine, copy the built files to the Raspberry Pi (run these commands on your development machine):
+```bash
+# Replace raspberrypi with your Pi's IP address if needed
+scp -r dist/* kali@raspberrypi:/var/www/html/videos/
+scp -r server kali@raspberrypi:/var/www/html/videos/
+scp -r shared kali@raspberrypi:/var/www/html/videos/
+scp package.json package-lock.json kali@raspberrypi:/var/www/html/videos/
+```
+
+## 4. Install Dependencies on Raspberry Pi
+On your Raspberry Pi:
+```bash
+cd /var/www/html/videos
 npm install --production
 ```
 
-## 4. Configure Apache2
-Create a new Apache configuration file `/etc/apache2/sites-available/videos.conf`:
+## 5. Configure Apache2
+Create a new Apache configuration file:
+```bash
+sudo nano /etc/apache2/sites-available/videos.conf
+```
 
+Add this configuration:
 ```apache
 <VirtualHost *:80>
-    ServerName your-domain-or-ip
+    ServerName raspberrypi
     DocumentRoot /var/www/html/videos
 
     ProxyPreserveHost On
@@ -48,7 +57,7 @@ sudo a2enmod proxy_http
 sudo systemctl restart apache2
 ```
 
-## 5. Start the Node.js Server
+## 6. Start the Node.js Server
 Install PM2 to manage the Node.js process:
 ```bash
 sudo npm install -g pm2
@@ -62,11 +71,8 @@ pm2 save
 pm2 startup
 ```
 
-## 6. Set Up Video Directory
+## 7. Set Up Video Directory
 Create a directory for your video files:
 ```bash
 sudo mkdir -p /var/www/html/videos/content
 sudo chown -R www-data:www-data /var/www/html/videos/content
-```
-
-The application should now be accessible at `http://your-raspberry-pi-ip/videos`
