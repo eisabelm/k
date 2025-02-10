@@ -1,9 +1,12 @@
 # Create project directory
+```powershell
 cd C:\Users\lebas
 mkdir video-stream
 cd video-stream
+```
 
 # Verify you're in the correct directory
+```powershell
 pwd  # Should show C:\Users\lebas\video-stream
 ```
 
@@ -24,7 +27,7 @@ npm --version   # Should show version like 10.x.x
 ```
 
 ## 4. Build Application
-Important: Make sure you're in the correct project directory before running these commands!
+Important: Make sure you're in the correct directory before running these commands!
 
 ```powershell
 # First, verify you're in the correct directory
@@ -77,3 +80,4 @@ pm2 startup
 # Run these commands on your Raspberry Pi
 sudo mkdir -p /var/www/html/videos/content
 sudo chown -R www-data:www-data /var/www/html/videos/content
+```
