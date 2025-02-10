@@ -1,16 +1,7 @@
-# Create project directory
-```powershell
-cd C:\Users\lebas
-mkdir video-stream
-cd video-stream
+Set-ExecutionPolicy Bypass -Scope Process -Force
 ```
 
-# Verify you're in the correct directory
-```powershell
-pwd  # Should show C:\Users\lebas\video-stream
-```
-
-## 2. Install Node.js:
+2. Install Node.js:
 - Go to https://nodejs.org/en/download
 - Download Windows Installer (.msi) for LTS version
 - Run the installer, accepting all defaults
@@ -18,31 +9,27 @@ pwd  # Should show C:\Users\lebas\video-stream
 - Complete the installation
 - Restart your computer
 
-## 3. After restart, verify installation:
+3. After restart, verify installation:
 - Open PowerShell (not as Administrator)
 - Run these commands:
 ```powershell
-node --version  # Should show version like v22.x.x
-npm --version   # Should show version like 10.x.x
+node --version
+npm --version
 ```
 
-## 4. Build Application
-Important: Make sure you're in the correct directory before running these commands!
-
+## 2. Build Application
 ```powershell
-# First, verify you're in the correct directory
-# The directory should contain package.json file
-dir package.json  # This should show the package.json file
+# Navigate to your project directory
+cd C:\path\to\your\project
 
-# If package.json is not found, you need to navigate to the correct directory
-cd C:\Users\lebas\video-stream
-
-# Once you confirm you're in the right directory with package.json:
+# Install dependencies
 npm install
+
+# Build the application
 npm run build
 ```
 
-## 5. Deploy to Raspberry Pi
+## 3. Deploy to Raspberry Pi
 ```powershell
 # Replace raspberrypi with your Pi's IP address if needed
 scp -r dist/* kali@raspberrypi:/var/www/html/videos/
@@ -51,7 +38,7 @@ scp -r shared kali@raspberrypi:/var/www/html/videos/
 scp package.json package-lock.json kali@raspberrypi:/var/www/html/videos/
 ```
 
-## 6. Configure Raspberry Pi
+## 4. Configure Raspberry Pi
 SSH into your Raspberry Pi and run:
 ```bash
 # Install Node.js and npm
@@ -75,9 +62,8 @@ pm2 save
 pm2 startup
 ```
 
-## 7. Set Up Video Directory
+## 5. Set Up Video Directory
 ```bash
 # Run these commands on your Raspberry Pi
 sudo mkdir -p /var/www/html/videos/content
 sudo chown -R www-data:www-data /var/www/html/videos/content
-```
