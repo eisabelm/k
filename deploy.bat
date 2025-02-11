@@ -10,7 +10,7 @@ if not exist "package.json" (
     exit /b 1
 )
 
-:: Build the application
+:: Build the application first
 echo Building application...
 call npm run build
 if errorlevel 1 (
@@ -26,14 +26,16 @@ if exist deploy.zip (
     del /F deploy.zip
 )
 
+:: Package files using PowerShell
 echo Packaging files into deploy.zip...
-powershell -Command "Compress-Archive -Path dist\*,package.json,ecosystem.config.js,videostream.nginx.conf,videostream.service -DestinationPath deploy.zip -Force"
+powershell -NoProfile -Command "& {Compress-Archive -Path dist,package.json,ecosystem.config.js,videostream.nginx.conf,videostream.service -DestinationPath deploy.zip -Force}"
 if errorlevel 1 (
     echo Error: Failed to create deploy.zip
     pause
     exit /b 1
 )
 
+:: Verify the package was created
 if exist deploy.zip (
     echo Successfully created deploy.zip!
 ) else (
@@ -43,16 +45,20 @@ if exist deploy.zip (
 )
 
 echo.
-echo To deploy to your Kali Linux machine:
-echo 1. Transfer deploy.zip to your Kali machine using scp:
-echo    scp deploy.zip kali@your-kali-ip:/home/kali/
+echo Deployment package created successfully!
 echo.
-echo 2. On your Kali machine, run:
+echo Next steps:
+echo 1. Transfer deploy.zip to your Kali machine:
+echo    scp deploy.zip kali@192.168.1.46:/home/kali/
+echo.
+echo 2. On your Kali machine, run these commands:
 echo    cd /home/kali
 echo    unzip -o deploy.zip -d videostream-temp
 echo    sudo cp -r videostream-temp/* /var/www/videostream/
 echo    cd /var/www/videostream
 echo    sudo npm install
 echo    sudo systemctl restart videostream
+echo    sudo systemctl status videostream
 echo.
+echo Press any key to exit...
 pause
