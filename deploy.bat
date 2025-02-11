@@ -12,14 +12,36 @@ if not exist "package.json" (
 
 :: Build the application
 echo Building application...
-npm run build
+call npm run build
+if errorlevel 1 (
+    echo Error: Build failed
+    pause
+    exit /b 1
+)
 
 :: Create deployment package
 echo Creating deployment package...
-if exist deploy.zip del /F deploy.zip
-powershell Compress-Archive -Path dist\*, ecosystem.config.js, videostream.nginx.conf, videostream.service -DestinationPath deploy.zip
+if exist deploy.zip (
+    echo Removing existing deploy.zip...
+    del /F deploy.zip
+)
 
-echo Deployment package created: deploy.zip
+echo Packaging files into deploy.zip...
+powershell -Command "Compress-Archive -Path dist\*, ecosystem.config.js, videostream.nginx.conf, videostream.service -DestinationPath deploy.zip -Force"
+if errorlevel 1 (
+    echo Error: Failed to create deploy.zip
+    pause
+    exit /b 1
+)
+
+if exist deploy.zip (
+    echo Successfully created deploy.zip!
+) else (
+    echo Error: deploy.zip was not created
+    pause
+    exit /b 1
+)
+
 echo.
 echo To deploy to your Kali Linux machine:
 echo 1. Transfer deploy.zip to your Kali machine using scp:
