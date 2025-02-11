@@ -1,0 +1,49 @@
+kali@raspberrypi:~ $ # On your Kali machine
+cd /home/kali
+rm -rf videostream-temp
+unzip -o deploy.zip -d videostream-temp
+sudo cp -r videostream-temp/* /var/www/videostream/
+cd /var/www/videostream
+sudo npm install
+sudo systemctl restart videostream
+sudo systemctl status videostream
+Archive:  deploy.zip
+warning:  deploy.zip appears to use backslashes as path separators
+  inflating: videostream-temp/public/index.html
+  inflating: videostream-temp/public/assets/index-D9V6f6b9.js
+  inflating: videostream-temp/public/assets/index-DDQuFZYy.css
+  inflating: videostream-temp/index.js
+  inflating: videostream-temp/ecosystem.config.js
+  inflating: videostream-temp/videostream.nginx.conf
+  inflating: videostream-temp/videostream.service
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /var/www/videostream/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/var/www/videostream/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2025-02-11T03_46_48_257Z-debug-0.log
+● videostream.service - VideoStream Backend Server
+     Loaded: loaded (/etc/systemd/system/videostream.service; enabled; preset: >
+     Active: active (running) since Tue 2025-02-11 03:46:48 GMT; 38ms ago
+   Main PID: 19530 (node)
+      Tasks: 1 (limit: 3915)
+        CPU: 36ms
+     CGroup: /system.slice/videostream.service
+             └─19530 /usr/bin/node /var/www/videostream/dist/index.js
+
+Feb 11 03:46:48 raspberrypi systemd[1]: Started videostream.service - VideoStre>
+lines 1-10/10 (END)...skipping...
+● videostream.service - VideoStream Backend Server
+     Loaded: loaded (/etc/systemd/system/videostream.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2025-02-11 03:46:48 GMT; 38ms ago
+   Main PID: 19530 (node)
+      Tasks: 1 (limit: 3915)
+        CPU: 36ms
+     CGroup: /system.slice/videostream.service
+             └─19530 /usr/bin/node /var/www/videostream/dist/index.js
+
+Feb 11 03:46:48 raspberrypi systemd[1]: Started videostream.service - VideoStream Backend Server.
