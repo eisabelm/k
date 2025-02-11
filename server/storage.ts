@@ -36,6 +36,60 @@ export class MemStorage implements IStorage {
         description: "Journey through the golden sands",
         thumbnail: "https://images.unsplash.com/photo-1509316785289-025f5b846b35",
         videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      },
+      {
+        title: "Forest Wildlife",
+        description: "Discover the hidden life in forests",
+        thumbnail: "https://images.unsplash.com/photo-1448375240586-882707db888b",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+      },
+      {
+        title: "City Lights",
+        description: "Nighttime urban exploration",
+        thumbnail: "https://images.unsplash.com/photo-1519501025264-65ba15a82390",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+      },
+      {
+        title: "River Rapids",
+        description: "Experience the thrill of white water",
+        thumbnail: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+      },
+      {
+        title: "Northern Lights",
+        description: "Aurora Borealis in full display",
+        thumbnail: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+      },
+      {
+        title: "Volcano Eruption",
+        description: "Nature's raw power unleashed",
+        thumbnail: "https://images.unsplash.com/photo-1462332420958-a05d1e002413",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+      },
+      {
+        title: "Underwater World",
+        description: "Exploring coral reefs",
+        thumbnail: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
+      },
+      {
+        title: "Snow Storm",
+        description: "Winter's fury in action",
+        thumbnail: "https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+      },
+      {
+        title: "Desert Sunset",
+        description: "Golden hour in the Sahara",
+        thumbnail: "https://images.unsplash.com/photo-1509074761163-a1defef7c10a",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"
+      },
+      {
+        title: "Rainforest Life",
+        description: "Biodiversity in action",
+        thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
       }
     ];
 
