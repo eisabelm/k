@@ -13,28 +13,17 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
   useEffect(() => {
     if (!videoRef.current) return;
 
-    // Initialize player
-    const options = {
+    const player = videojs(videoRef.current, {
       controls: true,
       fluid: true,
-      preload: 'auto',
-      html5: {
-        vhs: {
-          overrideNative: true
-        },
-        nativeAudioTracks: false,
-        nativeVideoTracks: false
-      },
       sources: [{
         src: url,
         type: 'video/mp4'
       }]
-    };
+    });
 
-    const player = videojs(videoRef.current, options);
     playerRef.current = player;
 
-    // Cleanup
     return () => {
       if (playerRef.current) {
         playerRef.current.dispose();
@@ -44,10 +33,10 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
   }, [url]);
 
   return (
-    <div className="aspect-video">
+    <div data-vjs-player>
       <video 
         ref={videoRef}
-        className="video-js vjs-big-play-centered w-full h-full"
+        className="video-js vjs-big-play-centered"
       />
     </div>
   );
