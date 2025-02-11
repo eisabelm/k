@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import videojs from "video.js";
-import "video.js/dist/video-js.css";
+import type Player from "video.js/dist/types/player";
 
 interface VideoPlayerProps {
   url: string;
@@ -8,38 +8,38 @@ interface VideoPlayerProps {
 
 export default function VideoPlayer({ url }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<Player>();
 
   useEffect(() => {
-    // Make sure video.js player is only initialized once
-    if (!playerRef.current) {
-      if (!videoRef.current) return;
+    // Check if we have video element
+    if (!videoRef.current) {
+      return;
+    }
 
+    // Initialize player if it hasn't been initialized
+    if (!playerRef.current) {
       const videoElement = videoRef.current;
-      const player = videojs(videoElement, {
+
+      playerRef.current = videojs(videoElement, {
         controls: true,
+        autoplay: false,
+        preload: 'auto',
         fluid: true,
         responsive: true,
+        playbackRates: [0.5, 1, 1.5, 2],
         sources: [{
           src: url,
           type: 'video/mp4'
         }]
       });
 
-      player.ready(() => {
+      // Log when player is ready
+      playerRef.current.ready(() => {
         console.log('Player is ready');
-        // Load the video source after player is ready
-        player.src({
-          src: url,
-          type: 'video/mp4'
-        });
       });
-
-      playerRef.current = player;
     } else {
-      // If player exists, just update the source
-      const player = playerRef.current;
-      player.src({
+      // If player exists, update the source
+      playerRef.current.src({
         src: url,
         type: 'video/mp4'
       });
@@ -49,7 +49,7 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
     return () => {
       if (playerRef.current) {
         playerRef.current.dispose();
-        playerRef.current = null;
+        playerRef.current = undefined;
       }
     };
   }, [url]);
