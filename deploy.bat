@@ -27,7 +27,7 @@ if exist deploy.zip (
 )
 
 echo Packaging files into deploy.zip...
-powershell -Command "Compress-Archive -Path dist\*, ecosystem.config.js, videostream.nginx.conf, videostream.service -DestinationPath deploy.zip -Force"
+powershell -Command "Compress-Archive -Path dist\*,package.json,ecosystem.config.js,videostream.nginx.conf,videostream.service -DestinationPath deploy.zip -Force"
 if errorlevel 1 (
     echo Error: Failed to create deploy.zip
     pause
@@ -45,14 +45,14 @@ if exist deploy.zip (
 echo.
 echo To deploy to your Kali Linux machine:
 echo 1. Transfer deploy.zip to your Kali machine using scp:
-echo    scp deploy.zip kali@your-raspberry-pi:/home/kali/
+echo    scp deploy.zip kali@your-kali-ip:/home/kali/
 echo.
 echo 2. On your Kali machine, run:
 echo    cd /home/kali
-echo    unzip deploy.zip -d videostream-temp
-echo    sudo cp videostream-temp/videostream.nginx.conf /etc/nginx/sites-available/videostream
-echo    sudo cp videostream-temp/videostream.service /etc/systemd/system/
+echo    unzip -o deploy.zip -d videostream-temp
 echo    sudo cp -r videostream-temp/* /var/www/videostream/
-echo    rm -rf videostream-temp
+echo    cd /var/www/videostream
+echo    sudo npm install
+echo    sudo systemctl restart videostream
 echo.
 pause
