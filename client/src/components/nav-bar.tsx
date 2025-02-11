@@ -6,7 +6,7 @@ export default function NavBar() {
     <nav className="bg-card shadow-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-bold text-primary">VideoStream</a>
+          <h1 className="text-2xl font-bold text-primary cursor-pointer">VideoStream</h1>
         </Link>
         <div className="w-1/2 max-w-xl">
           <SearchBar />

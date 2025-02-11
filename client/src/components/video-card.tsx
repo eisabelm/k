@@ -10,7 +10,7 @@ interface VideoCardProps {
 export default function VideoCard({ video }: VideoCardProps) {
   return (
     <Link href={`/video/${video.id}`}>
-      <a className="block hover:opacity-80 transition-opacity">
+      <div className="block hover:opacity-80 transition-opacity cursor-pointer">
         <Card>
           <CardContent className="p-0">
             <AspectRatio ratio={16/9}>
@@ -28,7 +28,7 @@ export default function VideoCard({ video }: VideoCardProps) {
             </div>
           </CardContent>
         </Card>
-      </a>
+      </div>
     </Link>
   );
 }
