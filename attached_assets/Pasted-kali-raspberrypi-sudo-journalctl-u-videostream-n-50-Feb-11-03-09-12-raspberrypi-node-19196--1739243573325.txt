@@ -1,0 +1,51 @@
+kali@raspberrypi:~ $ sudo journalctl -u videostream -n 50
+Feb 11 03:09:12 raspberrypi node[19196]: Error: Cannot find module '/var/www/videostream/dist/index.js'
+Feb 11 03:09:12 raspberrypi node[19196]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1134:15)
+Feb 11 03:09:12 raspberrypi node[19196]:     at Module._load (node:internal/modules/cjs/loader:975:27)
+Feb 11 03:09:12 raspberrypi node[19196]:     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:12>
+Feb 11 03:09:12 raspberrypi node[19196]:     at node:internal/main/run_main_module:28:49 {
+Feb 11 03:09:12 raspberrypi node[19196]:   code: 'MODULE_NOT_FOUND',
+Feb 11 03:09:12 raspberrypi node[19196]:   requireStack: []
+Feb 11 03:09:12 raspberrypi node[19196]: }
+Feb 11 03:09:12 raspberrypi node[19196]: Node.js v18.19.0
+Feb 11 03:09:12 raspberrypi systemd[1]: videostream.service: Main process exited, code=exited, status=1/FAILURE
+Feb 11 03:09:12 raspberrypi systemd[1]: videostream.service: Failed with result 'exit-code'.
+Feb 11 03:09:12 raspberrypi systemd[1]: videostream.service: Scheduled restart job, restart counter is at 3.
+Feb 11 03:09:12 raspberrypi systemd[1]: Stopped videostream.service - VideoStream Backend Server.
+Feb 11 03:09:12 raspberrypi systemd[1]: Started videostream.service - VideoStream Backend Server.
+Feb 11 03:09:12 raspberrypi node[19203]: node:internal/modules/cjs/loader:1137
+Feb 11 03:09:12 raspberrypi node[19203]:   throw err;
+Feb 11 03:09:12 raspberrypi node[19203]:   ^
+Feb 11 03:09:12 raspberrypi node[19203]: Error: Cannot find module '/var/www/videostream/dist/index.js'
+Feb 11 03:09:12 raspberrypi node[19203]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1134:15)
+Feb 11 03:09:12 raspberrypi node[19203]:     at Module._load (node:internal/modules/cjs/loader:975:27)
+Feb 11 03:09:12 raspberrypi node[19203]:     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:12>
+Feb 11 03:09:12 raspberrypi node[19203]:     at node:internal/main/run_main_module:28:49 {
+Feb 11 03:09:12 raspberrypi node[19203]:   code: 'MODULE_NOT_FOUND',
+Feb 11 03:09:12 raspberrypi node[19203]:   requireStack: []
+Feb 11 03:09:12 raspberrypi node[19203]: }
+Feb 11 03:09:12 raspberrypi node[19203]: Node.js v18.19.0
+Feb 11 03:09:12 raspberrypi systemd[1]: videostream.service: Main process exited, code=exited, status=1/FAILURE
+Feb 11 03:09:12 raspberrypi systemd[1]: videostream.service: Failed with result 'exit-code'.
+Feb 11 03:09:12 raspberrypi systemd[1]: videostream.service: Scheduled restart job, restart counter is at 4.
+Feb 11 03:09:12 raspberrypi systemd[1]: Stopped videostream.service - VideoStream Backend Server.
+Feb 11 03:09:12 raspberrypi systemd[1]: Started videostream.service - VideoStream Backend Server.
+Feb 11 03:09:13 raspberrypi node[19210]: node:internal/modules/cjs/loader:1137
+Feb 11 03:09:13 raspberrypi node[19210]:   throw err;
+Feb 11 03:09:13 raspberrypi node[19210]:   ^
+Feb 11 03:09:13 raspberrypi node[19210]: Error: Cannot find module '/var/www/videostream/dist/index.js'
+Feb 11 03:09:13 raspberrypi node[19210]:     at Module._resolveFilename (node:internal/modules/cjs/loader:1134:15)
+Feb 11 03:09:13 raspberrypi node[19210]:     at Module._load (node:internal/modules/cjs/loader:975:27)
+Feb 11 03:09:13 raspberrypi node[19210]:     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:12>
+Feb 11 03:09:13 raspberrypi node[19210]:     at node:internal/main/run_main_module:28:49 {
+Feb 11 03:09:13 raspberrypi node[19210]:   code: 'MODULE_NOT_FOUND',
+Feb 11 03:09:13 raspberrypi node[19210]:   requireStack: []
+Feb 11 03:09:13 raspberrypi node[19210]: }
+Feb 11 03:09:13 raspberrypi node[19210]: Node.js v18.19.0
+Feb 11 03:09:13 raspberrypi systemd[1]: videostream.service: Main process exited, code=exited, status=1/FAILURE
+Feb 11 03:09:13 raspberrypi systemd[1]: videostream.service: Failed with result 'exit-code'.
+Feb 11 03:09:13 raspberrypi systemd[1]: videostream.service: Scheduled restart job, restart counter is at 5.
+Feb 11 03:09:13 raspberrypi systemd[1]: Stopped videostream.service - VideoStream Backend Server.
+Feb 11 03:09:13 raspberrypi systemd[1]: videostream.service: Start request repeated too quickly.
+Feb 11 03:09:13 raspberrypi systemd[1]: videostream.service: Failed with result 'exit-code'.
+Feb 11 03:09:13 raspberrypi systemd[1]: Failed to start videostream.service - VideoStream Backend Server.
