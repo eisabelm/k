@@ -1,20 +1,26 @@
+
 @import 'video.js/dist/video-js.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+  }
+
   * {
-    @apply border-border;
+    @apply border-[--border];
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply bg-background text-foreground;
   }
 }
-
-/* VideoJS styles */
-@import 'video.js/dist/video-js.css';
 
 .video-js {
   width: 100%;

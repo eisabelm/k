@@ -40,10 +40,10 @@ export default function VideoPlayer({ url }: VideoPlayerProps) {
   }, [url]);
 
   return (
-    <div data-vjs-player className="w-full">
+    <div data-vjs-player>
       <video 
         ref={videoRef}
-        className="video-js vjs-big-play-centered vjs-fluid"
+        className="video-js vjs-big-play-centered"
       />
     </div>
   );
