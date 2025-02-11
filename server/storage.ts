@@ -23,73 +23,73 @@ export class MemStorage implements IStorage {
         title: "Beautiful Mountain Sunrise",
         description: "Stunning timelapse of sunrise over mountains",
         thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       },
       {
         title: "Ocean Waves",
         description: "Relaxing ocean waves on a tropical beach",
         thumbnail: "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
       },
       {
         title: "Desert Adventure",
         description: "Journey through the golden sands",
         thumbnail: "https://images.unsplash.com/photo-1509316785289-025f5b846b35",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
       },
       {
         title: "Forest Wildlife",
         description: "Discover the hidden life in forests",
         thumbnail: "https://images.unsplash.com/photo-1448375240586-882707db888b",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
       },
       {
         title: "City Lights",
         description: "Nighttime urban exploration",
         thumbnail: "https://images.unsplash.com/photo-1519501025264-65ba15a82390",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
       },
       {
         title: "River Rapids",
         description: "Experience the thrill of white water",
         thumbnail: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
       },
       {
         title: "Northern Lights",
         description: "Aurora Borealis in full display",
         thumbnail: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerLounges.mp4"
       },
       {
         title: "Volcano Eruption",
         description: "Nature's raw power unleashed",
         thumbnail: "https://images.unsplash.com/photo-1462332420958-a05d1e002413",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
       },
       {
         title: "Underwater World",
         description: "Exploring coral reefs",
         thumbnail: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMoments.mp4"
       },
       {
         title: "Snow Storm",
         description: "Winter's fury in action",
         thumbnail: "https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
       },
       {
         title: "Desert Sunset",
         description: "Golden hour in the Sahara",
         thumbnail: "https://images.unsplash.com/photo-1509074761163-a1defef7c10a",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
       },
       {
         title: "Rainforest Life",
         description: "Biodiversity in action",
         thumbnail: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-        videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_2MB.mp4"
+        videoUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4"
       }
     ];
 
