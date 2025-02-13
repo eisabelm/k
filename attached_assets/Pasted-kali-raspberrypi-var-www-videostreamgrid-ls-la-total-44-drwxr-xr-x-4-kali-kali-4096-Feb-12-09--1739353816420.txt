@@ -1,0 +1,48 @@
+kali@raspberrypi:/var/www/videostreamgrid $ ls -la
+total 44
+drwxr-xr-x 4 kali kali 4096 Feb 12 09:28 .
+drwxr-xr-x 6 root root 4096 Feb 12 03:50 ..
+-rw-r--r-- 1 root root  377 Feb 12 09:27 ecosystem.config.js
+-rw-r--r-- 1 root root 9488 Feb 12 09:27 index.js
+-rw-r--r-- 1 root root   94 Feb 12 09:28 package-lock.json
+drwxr-xr-x 3 kali kali 4096 Feb 12 09:27 public
+drwxr-xr-x 2 kali kali 4096 Feb 12 04:19 server
+-rw-r--r-- 1 root root 1379 Feb 12 09:27 videostream.nginx.conf
+-rw-r--r-- 1 root root  307 Feb 12 09:27 videostream.service
+kali@raspberrypi:/var/www/videostreamgrid $ ls -la ~/videostreamgrid/
+total 36
+drwxr-xr-x  3 kali kali 4096 Feb 12 09:26 .
+drwx------ 25 kali kali 4096 Feb 12 09:26 ..
+-rw-r--r--  1 kali kali  377 Feb 10 18:48 ecosystem.config.js
+-rw-r--r--  1 kali kali 9488 Feb 10 18:58 index.js
+drwxr-xr-x  3 kali kali 4096 Feb 12 09:26 public
+-rw-r--r--  1 kali kali 1379 Feb 10 18:48 videostream.nginx.conf
+-rw-r--r--  1 kali kali  307 Feb 10 18:48 videostream.service
+kali@raspberrypi:/var/www/videostreamgrid $ sudo nano /var/www/videostreamgrid/package.json
+kali@raspberrypi:/var/www/videostreamgrid $ sudo npm install
+npm WARN deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm WARN deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+
+added 489 packages, and audited 490 packages in 1m
+
+60 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+kali@raspberrypi:/var/www/videostreamgrid $ sudo systemctl restart videostreamgrid
+Failed to restart videostreamgrid.service: Unit videostreamgrid.service not found.
+kali@raspberrypi:/var/www/videostreamgrid $ sudo systemctl restart videostream
+kali@raspberrypi:/var/www/videostreamgrid $ sudo systemctl status videostream
+× videostream.service - VideoStream Backend Server
+     Loaded: loaded (/etc/systemd/system/videostream.service; enabled; preset: enabled)
+     Active: failed (Result: exit-code) since Wed 2025-02-12 09:48:50 GMT; 10s ago
+   Duration: 325ms
+    Process: 27871 ExecStart=/usr/bin/node /var/www/videostream/dist/index.js (code=exited, status=1/>
+   Main PID: 27871 (code=exited, status=1/FAILURE)
+        CPU: 328ms
+
+Feb 12 09:48:50 raspberrypi systemd[1]: videostream.service: Scheduled restart job, restart counter i>
+Feb 12 09:48:50 raspberrypi systemd[1]: Stopped videostream.service - VideoStream Backend Server.
+Feb 12 09:48:50 raspberrypi systemd[1]: videostream.service: Start request repeated too quickly.
+Feb 12 09:48:50 raspberrypi systemd[1]: videostream.service: Failed with result 'exit-code'.
+Feb 12 09:48:50 raspberrypi systemd[1]: Failed to start videostream.service - VideoStream Backend Ser>
