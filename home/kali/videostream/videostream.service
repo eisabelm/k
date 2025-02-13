@@ -1,0 +1,22 @@
+[Unit]
+Description=VideoStream Backend Server
+After=network.target
+
+[Service]
+Type=simple
+User=kali
+WorkingDirectory=/var/www/videostream
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+Environment=PORT=5000
+
+LimitNOFILE=4096
+
+StandardOutput=append:/var/www/videostream/logs/out.log
+StandardError=append:/var/www/videostream/logs/err.log
+SyslogIdentifier=videostream
+
+[Install]
+WantedBy=multi-user.target
