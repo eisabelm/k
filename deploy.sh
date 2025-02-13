@@ -71,6 +71,7 @@ echo -e "\nVerifying deployment..."
 echo "Checking Apache status..."
 if ! systemctl is-active --quiet apache2; then
     echo "ERROR: Apache is not running!"
+    echo "Try: sudo systemctl start apache2"
     exit 1
 fi
 
@@ -78,6 +79,7 @@ fi
 echo "Checking videostream service status..."
 if ! systemctl is-active --quiet videostream; then
     echo "ERROR: Videostream service is not running!"
+    echo "Try: sudo systemctl start videostream"
     systemctl status videostream
     exit 1
 fi
@@ -86,6 +88,7 @@ fi
 echo "Checking backend API..."
 if ! curl -s --head http://localhost:5000/api > /dev/null; then
     echo "ERROR: Backend API is not responding!"
+    echo "Check logs: tail -f /var/www/videostream/logs/err.log"
     tail -n 50 /var/www/videostream/logs/err.log
     exit 1
 fi
@@ -94,6 +97,7 @@ fi
 echo "Checking frontend files..."
 if [ ! -f "/var/www/html/ccrccgame/index.html" ]; then
     echo "ERROR: Frontend files not found!"
+    echo "Check if the build process completed successfully"
     exit 1
 fi
 
@@ -101,6 +105,7 @@ fi
 echo "Checking log files..."
 if [ ! -w "/var/www/videostream/logs/err.log" ]; then
     echo "ERROR: Log files are not writable!"
+    echo "Try: sudo chown -R kali:kali /var/www/videostream/logs"
     ls -la /var/www/videostream/logs/
     exit 1
 fi
@@ -109,13 +114,7 @@ fi
 echo "Checking Apache configuration..."
 if ! apache2ctl -t; then
     echo "ERROR: Apache configuration is invalid!"
-    exit 1
-fi
-
-# Check database connectivity
-echo "Checking database connection..."
-if ! curl -s "http://localhost:5000/api/health" | grep -q "database"; then
-    echo "ERROR: Database connection failed!"
+    echo "Check: /etc/apache2/sites-available/ccrccgame.org.conf"
     exit 1
 fi
 

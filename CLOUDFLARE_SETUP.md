@@ -22,7 +22,7 @@
 2. Set SSL/TLS encryption mode to "Full"
 3. Enable "Always Use HTTPS" under the Edge Certificates tab
 
-## Page Rules (Optional)
+## Page Rules
 
 Consider adding these page rules:
 1. Always Use HTTPS
