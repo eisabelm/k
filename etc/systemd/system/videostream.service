@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=kali
 WorkingDirectory=/var/www/videostream
-ExecStart=/usr/bin/node /var/www/videostream/index.js
+ExecStart=/usr/bin/node /var/www/videostream/dist/index.js
 Restart=always
 RestartSec=10
 Environment=NODE_ENV=production
