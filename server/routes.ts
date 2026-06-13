@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { setupAudioRelay } from "./audio";
 
 export function registerRoutes(app: Express): Server {
   // Get all videos or search by query
@@ -25,5 +26,9 @@ export function registerRoutes(app: Express): Server {
   });
 
   const httpServer = createServer(app);
+
+  // Live "talk through your phone, hear it on your Mac" audio relay.
+  setupAudioRelay(httpServer);
+
   return httpServer;
 }
