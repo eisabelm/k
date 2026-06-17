@@ -1,0 +1,20 @@
+[Unit]
+Description=VideoStream Kiosk - fullscreen Home Screen on the attached display
+# Start after the graphical session and the app's web stack are up.
+After=graphical.target videostream.service apache2.service
+Wants=videostream.service apache2.service
+
+[Service]
+Type=simple
+User=kali
+# Attach to the local X display. Adjust XAUTHORITY if your user/home differs.
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/kali/.Xauthority
+# Home Screen URL (Apache serves the SPA at the site root on port 80).
+Environment=KIOSK_URL=http://localhost/
+ExecStart=/var/www/videostream/kiosk.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=graphical.target

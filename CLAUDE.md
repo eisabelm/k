@@ -142,6 +142,11 @@ This repo carries config for multiple deploy targets:
     backend; logs go to `/var/www/videostream/logs/`.
   - `videostream.nginx.conf` is an nginx alternative to the Apache config.
   - `CLOUDFLARE_SETUP.md` covers DNS/SSL (Cloudflare proxied, Full SSL).
+  - **Kiosk display:** `kiosk.sh` + `videostream-kiosk.service` show the app's
+    Home Screen fullscreen on the monitor attached to the Pi (Chromium kiosk
+    mode). `deploy.sh` installs/enables them; see `KIOSK_SETUP.md`. Requires a
+    graphical session + Chromium; the page shown is set via the `KIOSK_URL` env
+    var in the service unit.
 - `build.bat` / `deploy.bat` are Windows helpers.
 
 Note: the top-level `etc/`, `home/`, and `var/` directories are **snapshots of
