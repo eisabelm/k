@@ -47,6 +47,17 @@ sudo systemctl daemon-reload
 sudo systemctl enable videostream
 sudo systemctl restart videostream
 
+# Configure the kiosk display (shows the Home Screen fullscreen on the attached
+# monitor). This requires a graphical session, so failures here are non-fatal —
+# the kiosk will start with the desktop session.
+echo "Configuring kiosk display service..."
+sudo cp kiosk.sh /var/www/videostream/
+sudo chmod +x /var/www/videostream/kiosk.sh
+sudo cp videostream-kiosk.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable videostream-kiosk || echo "Note: enable videostream-kiosk once a graphical session is available"
+sudo systemctl restart videostream-kiosk || echo "Note: kiosk will start with the graphical session"
+
 # Configure Apache
 echo "Configuring Apache..."
 # Enable required Apache modules
